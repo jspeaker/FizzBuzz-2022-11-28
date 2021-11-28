@@ -8,43 +8,55 @@ namespace FizzBuzz_2022_11_28
     public class FizzBuzzTests
     {
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntNotEvenlyDivisibleByThreeOrFive_WhenAskingToString_ThenItShouldReturnIntAsString()
+        public void GivenIntNotEvenlyDivisibleByThreeOrFive_WhenImplicitlyGettingString_ThenItShouldReturnIntAsString()
         {
             // arrange
             FizzBuzzString four = new(4);
 
-            // act // assert
-            ((string) four).Should().Be("4");
+            // act 
+            string actual = four;
+
+            // assert
+            actual.Should().Be("4");
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntEvenlyDivisibleByThree_WhenAskingToString_ThenItShouldReturnFizz()
+        public void GivenIntEvenlyDivisibleByThree_WhenImplicitlyGettingString_ThenItShouldReturnFizz()
         {
             // arrange
             FizzBuzzString nine = new(9);
 
-            // act // assert
-            ((string) nine).Should().Be("Fizz");
+            // act
+            string actual = nine;
+            
+            // assert
+            actual.Should().Be("Fizz");
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntEvenlyDivisibleByFive_WhenAskingToString_ThenItShouldReturnBuzz()
+        public void GivenIntEvenlyDivisibleByFive_WhenImplicitlyGettingString_ThenItShouldReturnBuzz()
         {
             // arrange
             FizzBuzzString ten = new(10);
 
-            // act // assert
-            ((string) ten).Should().Be("Buzz");
+            // act
+            string actual = ten;
+
+            // assert
+            actual.Should().Be("Buzz");
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntEvenlyDivisibleByThreeAndFive_WhenAskingToString_ThenItShouldReturnFizzBuzz()
+        public void GivenIntEvenlyDivisibleByThreeAndFive_WhenImplicitlyGettingString_ThenItShouldReturnFizzBuzz()
         {
             // arrange
             FizzBuzzString thirty = new(30);
 
             // act // assert
-            ((string) thirty).Should().Be("FizzBuzz");
+            string actual = thirty;
+            
+            // assert
+            actual.Should().Be("FizzBuzz");
         }
     }
 }
