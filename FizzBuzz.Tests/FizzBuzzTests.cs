@@ -21,6 +21,19 @@ namespace FizzBuzz_2022_11_28
         }
 
         [TestMethod, TestCategory("Unit")]
+        public void GivenSeven_WhenImplicitlyGettingString_ThenItShouldReturnBang()
+        {
+            // arrange
+            FizzBuzzString seven = new(7);
+
+            // act 
+            string actual = seven;
+
+            // assert
+            actual.Should().Be("Bang");
+        }
+
+        [TestMethod, TestCategory("Unit")]
         public void GivenIntEvenlyDivisibleByThree_WhenImplicitlyGettingString_ThenItShouldReturnFizz()
         {
             // arrange
