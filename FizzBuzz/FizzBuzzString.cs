@@ -9,9 +9,10 @@ namespace FizzBuzz
         public FizzBuzzString(int value) : 
             this(new FizzBuzzStrategy(value, 
                 new BuzzStrategy(value, 
-                    new FizzStrategy(value, 
-                        new BangStrategy(value, 
-                            new StringStrategy(value)))))) {}
+                    new FizzBangStrategy(value, 
+                        new FizzStrategy(value, 
+                            new BangStrategy(value, 
+                                new StringStrategy(value))))))) {}
 
         private FizzBuzzString(IFizzBuzzString strategyChain) => _strategyChain = strategyChain;
 

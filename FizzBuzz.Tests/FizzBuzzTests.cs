@@ -8,7 +8,7 @@ namespace FizzBuzz_2022_11_28
     public class FizzBuzzTests
     {
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntNotEvenlyDivisibleByThreeOrFive_WhenImplicitlyGettingString_ThenItShouldReturnIntAsString()
+        public void GivenIntDoesNotMeetOtherBusinessRules_WhenImplicitlyGettingString_ThenItShouldReturnIntAsString()
         {
             // arrange
             FizzBuzzString four = new(4);
@@ -34,7 +34,20 @@ namespace FizzBuzz_2022_11_28
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntEvenlyDivisibleByThree_WhenImplicitlyGettingString_ThenItShouldReturnFizz()
+        public void GivenTwentyOne_WhenImplicitlyGettingString_ThenItShouldReturnFizzBang()
+        {
+            // arrange
+            FizzBuzzString twentyOne = new(21);
+
+            // act 
+            string actual = twentyOne;
+
+            // assert
+            actual.Should().Be("FizzBang");
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void GivenIntEvenlyDivisibleByThreeButNotTwentyOne_WhenImplicitlyGettingString_ThenItShouldReturnFizz()
         {
             // arrange
             FizzBuzzString nine = new(9);
@@ -60,7 +73,7 @@ namespace FizzBuzz_2022_11_28
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntEvenlyDivisibleByThreeAndFive_WhenImplicitlyGettingString_ThenItShouldReturnFizzBuzz()
+        public void GivenIntEvenlyDivisibleByThreeAndFiveButNotTwentyOne_WhenImplicitlyGettingString_ThenItShouldReturnFizzBuzz()
         {
             // arrange
             FizzBuzzString thirty = new(30);
