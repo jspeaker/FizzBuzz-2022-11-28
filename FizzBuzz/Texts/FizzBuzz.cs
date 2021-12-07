@@ -4,7 +4,7 @@ namespace FizzBuzz.Texts
     {
         private static readonly Lazy<FizzBuzz> _lazy = new(() => new FizzBuzz());
 
-        private FizzBuzz() : base("FizzBuzz") { }
+        private FizzBuzz() : base($"{(string)Fizz.Text()}{(string)Buzz.Text()}") { }
 
         public static FizzBuzz Text() => _lazy.Value;
     }

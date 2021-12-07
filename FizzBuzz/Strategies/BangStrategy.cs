@@ -16,7 +16,7 @@ namespace FizzBuzz.Strategies
 
         public string AsString()
         {
-            if (_value is 7) return Bang.Text();
+            if (_value.EvenlyDivisibleBy(7)) return Bang.Text();
             return _nextStrategy.AsString();
         }
     }
