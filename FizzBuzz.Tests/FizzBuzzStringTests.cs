@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FizzBuzz_2022_11_28
 {
     [TestClass]
-    public class FizzBuzzTests
+    public class FizzBuzzStringTests
     {
         [TestMethod, TestCategory("Unit")]
         public void GivenIntDoesNotMeetOtherBusinessRules_WhenImplicitlyGettingString_ThenItShouldReturnIntAsString()
@@ -47,10 +47,23 @@ namespace FizzBuzz_2022_11_28
         }
 
         [TestMethod, TestCategory("Unit")]
+        public void GivenThirtyFive_WhenImplicitlyGettingString_ThenItShouldReturnBuzzBang()
+        {
+            // arrange
+            FizzBuzzString thirtyFive = new(35);
+
+            // act 
+            string actual = thirtyFive;
+
+            // assert
+            actual.Should().Be("BuzzBang");
+        }
+
+        [TestMethod, TestCategory("Unit")]
         public void GivenIntEvenlyDivisibleByThreeButNotTwentyOne_WhenImplicitlyGettingString_ThenItShouldReturnFizz()
         {
             // arrange
-            FizzBuzzString nine = new(9);
+            FizzBuzzString nine = new(18);
 
             // act
             string actual = nine;
@@ -60,10 +73,10 @@ namespace FizzBuzz_2022_11_28
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntEvenlyDivisibleByFive_WhenImplicitlyGettingString_ThenItShouldReturnBuzz()
+        public void GivenIntEvenlyDivisibleByFiveButNotThirtyFive_WhenImplicitlyGettingString_ThenItShouldReturnBuzz()
         {
             // arrange
-            FizzBuzzString ten = new(10);
+            FizzBuzzString ten = new(25);
 
             // act
             string actual = ten;
@@ -73,10 +86,10 @@ namespace FizzBuzz_2022_11_28
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void GivenIntEvenlyDivisibleByThreeAndFiveButNotTwentyOne_WhenImplicitlyGettingString_ThenItShouldReturnFizzBuzz()
+        public void GivenIntEvenlyDivisibleByThreeAndFiveButNotTwentyOneOrThirtyFive_WhenImplicitlyGettingString_ThenItShouldReturnFizzBuzz()
         {
             // arrange
-            FizzBuzzString thirty = new(30);
+            FizzBuzzString thirty = new(45);
 
             // act // assert
             string actual = thirty;

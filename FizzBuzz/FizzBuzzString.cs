@@ -6,13 +6,14 @@ namespace FizzBuzz
     {
         private readonly IFizzBuzzString _strategyChain;
 
-        public FizzBuzzString(int value) : 
-            this(new FizzBuzzStrategy(value, 
-                new BuzzStrategy(value, 
-                    new FizzBangStrategy(value, 
-                        new FizzStrategy(value, 
-                            new BangStrategy(value, 
-                                new StringStrategy(value))))))) {}
+        public FizzBuzzString(int value) :
+            this(new FizzBuzzStrategy(value,
+                new BuzzBangStrategy(value,
+                    new BuzzStrategy(value,
+                        new FizzBangStrategy(value,
+                            new FizzStrategy(value,
+                                new BangStrategy(value,
+                                    new StringStrategy(value)))))))) { }
 
         private FizzBuzzString(IFizzBuzzString strategyChain) => _strategyChain = strategyChain;
 
